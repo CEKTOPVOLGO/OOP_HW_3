@@ -1,16 +1,17 @@
-public abstract class Product {
+public abstract class Product implements Comparable<Product>{
     protected String name;
-    protected int volume;
+    protected long price;
 
     
-    public Product(String name, int volume) {
+    public Product(String name, long price) {
         this.name = name;
-        this.volume = volume;
+        this.price = price;
     }
     public abstract String getName();
     public abstract void setName(String name);
-    public abstract int getVolume();
-    public abstract void setVolume(int volume);
+    public abstract long getPrice();
+    public abstract void setPrice(long price);
+
     
     
 }

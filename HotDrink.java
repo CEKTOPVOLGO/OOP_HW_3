@@ -1,16 +1,11 @@
-public class HotDrink extends Product {
+public class HotDrink extends Product{
 
-    private int temp;
-    private long price;
+    private int temp;    
 
-    public HotDrink(String name, int volume, int temp, long price) {
-        super(name, volume);
+    public HotDrink(String name, long price, int temp) {
+        super(name, price);
         this.temp = temp;
-        this.price = price;
-
-    }
-
-    
+    }    
 
     public int getTemp() {
         return temp;
@@ -22,7 +17,7 @@ public class HotDrink extends Product {
 
     @Override
     public String toString() {
-        return "HotDrink {" + "name='" + name + "\'" + ", volume = " + volume + ", temp = " + temp + ", price = " + price + "}";
+        return "HotDrink {" + "name='" + name + "\'" + ", price = " + price + ", temp = " + temp + "}";
     }
 
     @Override
@@ -31,32 +26,24 @@ public class HotDrink extends Product {
     }
 
     @Override
-    public int getVolume() {
-        return super.volume;
+    public long getPrice() {
+        return super.price;
     }
 
     @Override
     public void setName(String name) {
         super.name = name;
-
     }
 
     @Override
-    public void setVolume(int price) {
-        super.volume = volume;
-
-    }
-
-
-
-    public long getPrice() {
-        return price;
-    }
-
-
-
     public void setPrice(long price) {
-        this.price = price;
+        super.price = price;
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return Long.compare(this.price, o.price);
+        //return this.price.compareTo(o.price);
     }
 
 }
